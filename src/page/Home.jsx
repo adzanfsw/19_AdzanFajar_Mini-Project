@@ -3,10 +3,10 @@ import '../assets/style.css'
 function Home() {
   return (
     <>
-        <div className="mark"></div>
+        <div className="up"></div>
 
         <header>
-            <img src={require('../assets/images/justrun.png').default} />
+            <img alt="JUSTRUN!" src={require('../assets/images/justrun.png').default} />
            
             <ul>
                 <li>Tentang Kami</li>
@@ -19,7 +19,7 @@ function Home() {
         <nav></nav>
 
         <main>
-            <img src={require('../assets/images/home-banner.jpg').default} /> <br />
+            <img alt="Shoes Banner" src={require('../assets/images/home-banner.jpg').default} /> <br />
 
             <div className="welcome">WELCOME -<br />SELAMAT DATANG</div>
 
@@ -33,7 +33,7 @@ function Home() {
         <figure>
             <h3>Rekomendasi Sepatu</h3>
 
-            <img src={require('../assets/images/geist.jpg').default} /> <br />
+            <img alt="Geist Ekiden" src={require('../assets/images/geist.jpg').default} /> <br />
 
             <div className="tengah">
                 <div className="geist">910 GEIST EKIDEN</div>
@@ -45,10 +45,35 @@ function Home() {
             </div>
         </figure>
 
-        <article></article>
+        <article>
+            <h3>Artikel</h3>
 
-        <footer></footer>
- 
+            <img alt="Lari" src={require('../assets/images/olahraga.jpg').default} /> <br />
+
+            <div className="tengah">
+                <div className="hey">HEY -<br /> JANGAN LUPA OLAHRAGA</div>
+
+                <p>Menurut wikipedia, arti olahraga adalah aktivitas gerak manusia menurut teknik<br />
+                tertentu, dalam pelaksanaannya terdapat unsur bermain, ada rasa senang,<br />
+                dilakukan pada waktu luang, dan kepuasan tersendiri. Biasanya dilakukan untuk<br />
+                melatih tubuh seseorang, tidak hanya secara jasmani tetapi juga rohani.</p>
+
+                <button>Artikel Lainnya</button>
+            </div>
+        </article>
+
+        <footer>
+            <figcaption>© 2021 JUSTRUN! All Rights Reserved.</figcaption>
+
+            <div className="sosmed">
+                <ul>
+                    <li><img alt="Youtube" src={require('../assets/images/tube-icon.png').default} /></li>
+                    <li><img alt="Twitter" src={require('../assets/images/twit-icon.png').default} /></li>
+                    <li><img alt="Facebook" src={require('../assets/images/fb-icon.png').default} /></li>
+                    <li><img alt="Instagram" src={require('../assets/images/insta-icon.png').default} /></li>
+                </ul>
+            </div>
+        </footer>
     </>
   );
 }
