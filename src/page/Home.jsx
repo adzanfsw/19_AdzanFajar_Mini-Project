@@ -23,9 +23,7 @@ function Home() {
 
             <div className="welcome">WELCOME -<br />SELAMAT DATANG</div>
 
-            <p>JUSTRUN! adalah sebuah website yang berbasis di Indonesia. Website ini bisa<br />
-            dibilang sebagai forum diskusi yang membahas perkembangan dunia olahraga berlari,<br />
-            khususnya dalam hal sepatu, baik itu produk dalam negeri ataupun luar negeri.</p>
+            <p>JUSTRUN! adalah sebuah website yang berbasis di Indonesia. Website ini bisa dibilang sebagai forum diskusi yang membahas perkembangan dunia olahraga berlari, khususnya dalam hal sepatu, baik itu produk dalam negeri ataupun luar negeri.</p>
 
             <button>Selengkapnya</button>
         </main>
@@ -38,8 +36,7 @@ function Home() {
             <div className="tengah">
                 <div className="geist">910 GEIST EKIDEN</div>
 
-                <p>Salah satu sepatu running lokal terbaik saat ini. Dengan teknologi yang mendukungmu<br />
-                mendapatkan pengalaman berlari menjadi lebih mantap.</p>
+                <p>Salah satu sepatu running lokal terbaik saat ini. Dengan teknologi yang mendukungmu mendapatkan pengalaman berlari menjadi lebih mantap.</p>
 
                 <button>Detail Sepatu</button>
             </div>
@@ -53,10 +50,7 @@ function Home() {
             <div className="tengah">
                 <div className="hey">HEY -<br /> JANGAN LUPA OLAHRAGA</div>
 
-                <p>Menurut wikipedia, arti olahraga adalah aktivitas gerak manusia menurut teknik<br />
-                tertentu, dalam pelaksanaannya terdapat unsur bermain, ada rasa senang,<br />
-                dilakukan pada waktu luang, dan kepuasan tersendiri. Biasanya dilakukan untuk<br />
-                melatih tubuh seseorang, tidak hanya secara jasmani tetapi juga rohani.</p>
+                <p>Menurut wikipedia, arti olahraga adalah aktivitas gerak manusia menurut teknik tertentu, dalam pelaksanaannya terdapat unsur bermain, ada rasa senang, dilakukan pada waktu luang, dan kepuasan tersendiri. Biasanya dilakukan untuk melatih tubuh seseorang, tidak hanya secara jasmani tetapi juga rohani.</p>
 
                 <button>Artikel Lainnya</button>
             </div>
