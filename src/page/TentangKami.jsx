@@ -3,13 +3,11 @@ import '../assets/style-tentang.css'
 function TentangKami() {
   return (
     <>
-        <header>
+        <div className="navbar">
             <img className="justrun" alt="JUSTRUN!" src={require('../assets/images/just.png').default} />
 
-            <img className="nav" alt="JUSTRUN!" src={require('../assets/images/burger.png').default} />
-
-            <p>TETAPLAH MELANGKAH!</p>
-        </header>
+            <img className="burger" alt="JUSTRUN!" src={require('../assets/images/burger.png').default} />
+        </div>
 
         <article>
             <h1>TENTANG JUSTRUN<small>!</small></h1>
@@ -20,9 +18,9 @@ function TentangKami() {
             <strong>Kontak kami <small>&gt;</small></strong>
         </article>
 
-        <footer>	
-   			<p>© 2021 JUSTRUN! All Rights Reserved.</p>
-   		</footer>
+        <div className="footer">	
+   			    <p>© 2021 JUSTRUN! All Rights Reserved.</p>
+   		  </div>
     </>
   );
 }
