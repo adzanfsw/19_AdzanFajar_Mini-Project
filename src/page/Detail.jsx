@@ -1,4 +1,4 @@
-import '../assets/style-detail.css'
+import '../assets/style-detail.module.css'
 
 function Detail() {
   return (

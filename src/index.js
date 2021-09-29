@@ -4,10 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { ApolloProvider } from '@apollo/client';
+import news from './apollo-news';
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ApolloProvider news={news}>
+      <React.StrictMode>
+          <App />
+      </React.StrictMode>
+  </ApolloProvider>,
   document.getElementById('root')
 );
 

@@ -1,4 +1,4 @@
-import '../assets/style-sepatu.css'
+import '../assets/style-sepatu.module.css'
 
 function Sepatu() {
   return (

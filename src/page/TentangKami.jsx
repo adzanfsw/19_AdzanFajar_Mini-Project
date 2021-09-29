@@ -1,4 +1,4 @@
-import '../assets/style-tentang.css'
+import '../assets/style-tentang.module.css'
 
 function TentangKami() {
   return (
