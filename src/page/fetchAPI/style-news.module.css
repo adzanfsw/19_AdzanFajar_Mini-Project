@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;900&display=swap');
+
+article {
+    max-width: 70%;
+    height: 300px;
+    margin: 0 auto;
+    align-items: center;
+    border: red 1px solid;
+
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.artikel {
+    display: flex;
+    float: right;
+}
+
+img {
+    flex-basis: 40%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin: 0 0 0 95px;
+}
+
+.teks {
+    flex-basis: 60%;
+    float: right;
+}
+
+p {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 22px;
+}
