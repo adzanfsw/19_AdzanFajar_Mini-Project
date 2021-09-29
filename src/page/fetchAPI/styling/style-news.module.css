@@ -1,0 +1,16 @@
+article {
+    display: flex;
+    max-width: 80%;
+}
+
+.gambar {
+    flex-basis: 40%;
+}
+
+.gambar img {
+    width: 400px;
+}
+
+.teks {
+    flex-basis: 60%;
+}
