@@ -50,6 +50,21 @@ header li:hover {
 	cursor: pointer;
 }
 
+nav {
+	width: 100%;
+	height: max-content;
+	background-color: white;
+}
+
+.rekomen {
+	margin: 70px 0 0 70px;
+
+	font-family: Roboto;
+	font-weight: 300;
+	font-size: 23px;
+	line-height: 23px;
+}
+
 .konten {
 	margin-left: 50px;
 }

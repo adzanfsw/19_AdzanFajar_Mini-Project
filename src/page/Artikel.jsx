@@ -19,7 +19,7 @@ function Artikel() {
           </header>
 
           <div className={styles.nav}>
-              <div className={styles.caption}>Artikel olahraga lari hari ini :)</div>
+              <div className={styles.caption}>Artikel olahraga lari hari ini ..</div>
           </div>
 
           <News />

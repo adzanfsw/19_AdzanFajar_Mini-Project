@@ -51,7 +51,6 @@ header li:hover {
 }
 
 .nav {
-	display: flex;
 	align-items: center;
 	text-align: center;
 	width: 100%;
@@ -64,6 +63,8 @@ header li:hover {
 	font-style: normal;
 	font-weight: 300;
 	font-size: 14px;
+
+	padding-top: 20px;
 }
 
 footer {

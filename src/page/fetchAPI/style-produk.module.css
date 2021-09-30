@@ -12,6 +12,10 @@
     cursor: pointer;
 }
 
+.card:hover .lihat {
+    display: inline-block;
+}
+
 .avatar {
     width: 100%;
     height: 275px;
@@ -37,7 +41,10 @@
 }
 
 .lihat {
+    margin-top: 15px;
     font-family: Roboto;
-    font-style: normal;
+    font-weight: bold;
     font-size: 14px;
+
+    display: none;
 }

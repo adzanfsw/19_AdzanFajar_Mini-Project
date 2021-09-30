@@ -17,6 +17,10 @@ function Sepatu() {
             </ul>
         </header>
 
+        <nav>
+            <div className={styles.rekomen}>Rekomendasi Sepatu Lari (11)</div>
+        </nav>
+
         <div className={styles.konten}>
             <Produk />
         </div>

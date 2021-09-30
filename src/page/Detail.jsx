@@ -1,9 +1,9 @@
-import '../assets/style-detail.module.css'
+import style from '../assets/style-detail.module.css'
 
 function Detail() {
   return (
     <>
-        <div className="up"></div>
+        <div className={style.up}></div>
 
         <header>
             <img alt="JUSTRUN!" src={require('../assets/images/justrun.png').default} />
