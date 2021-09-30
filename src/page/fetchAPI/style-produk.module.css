@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;900&display=swap');
+
+.card {
+    width: 275px;
+    margin: 20px 20px;
+    display: inline-block;
+}
+
+.card:hover {
+    border: 1px black solid;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 100%;
+    height: 275px;
+}
+
+.cardContent {
+    padding: 5px 10px;
+}
+
+.tipe {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    color: rgb(133, 133, 133);
+}
+
+.produk {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+}

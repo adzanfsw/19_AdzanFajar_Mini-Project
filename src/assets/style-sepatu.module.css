@@ -49,3 +49,7 @@ header li:hover {
 	color: rgb(201, 0, 0);
 	cursor: pointer;
 }
+
+.konten {
+	margin-left: 50px;
+}
