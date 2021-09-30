@@ -26,7 +26,8 @@ function News() {
 
                     <div className={styles.teks}>
                         <div className={styles.judul}>{judul}</div>
-                        <div className={styles.title}>{subjudul}</div>
+                        <div className={styles.sub}>{subjudul}</div>
+                        <div className={styles.url}>Lihat selengkapnya ..</div>
                     </div>
                 </div>
             </div>
