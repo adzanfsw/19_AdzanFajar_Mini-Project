@@ -1,11 +1,12 @@
 import { useQuery, gql } from "@apollo/client";
-import './style-news.module.css';
+import styles from './style-news.module.css';
 
 const TEST = gql`
     query MyQuery {
         news {
             foto
             judul
+            subjudul
         }
     }
 `;
@@ -19,13 +20,16 @@ function News() {
     return (
 
         data.news.map(({foto, judul, subjudul}) => (                           
-            <article>
-                <div className="artikel">
-                    <img src={foto} />
+            <div className={styles.card}>
+                <div className={styles.artikel}>
+                    <img className={styles.gambar} src={foto} alt="gambar" />
 
-                    <div className="teks">{judul}</div>
+                    <div className={styles.teks}>
+                        <div className={styles.judul}>{judul}</div>
+                        <div className={styles.title}>{subjudul}</div>
+                    </div>
                 </div>
-            </article>
+            </div>
         ))
     )
 }
