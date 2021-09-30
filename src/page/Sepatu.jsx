@@ -20,6 +20,19 @@ function Sepatu() {
         <div className={styles.konten}>
             <Produk />
         </div>
+
+        <footer>
+            <figcaption>© 2021 JUSTRUN! All Rights Reserved.</figcaption>
+
+            <div className={styles.sosmed}>
+                <ul>
+                    <li><img alt="Youtube" src={require('../assets/images/tube-icon.png').default} /></li>
+                    <li><img alt="Twitter" src={require('../assets/images/twit-icon.png').default} /></li>
+                    <li><img alt="Facebook" src={require('../assets/images/fb-icon.png').default} /></li>
+                    <li><img alt="Instagram" src={require('../assets/images/insta-icon.png').default} /></li>
+                </ul>
+            </div>
+        </footer>
     </>
   );
 }

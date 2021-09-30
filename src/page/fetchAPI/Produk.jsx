@@ -26,6 +26,7 @@ function Produk() {
                 <div className={styles.cardContent}>
                     <div className={styles.tipe}>{tipe}</div>
                     <div className={styles.produk}>{produk}</div>
+                    <div className={styles.lihat}>Lihat sepatu &gt;</div>
                 </div>
             </div>
         ))
