@@ -7,7 +7,7 @@ import Detail from './page/Detail'
 function App() {
   return (
     <>
-        <Artikel />
+        <TentangKami />
     </>
   );
 }

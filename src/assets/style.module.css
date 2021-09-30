@@ -88,9 +88,12 @@ main img {
 	line-height: 65px;
 }
 
-figure,
-article {
+figure {
 	margin-top: 150px;
+}
+
+.article {
+	margin-top: 150px
 }
 
 .tengah {

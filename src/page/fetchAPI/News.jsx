@@ -1,7 +1,7 @@
 import { useQuery, gql } from "@apollo/client";
 import styles from './style-news.module.css';
 
-const TEST = gql`
+const ARTIKEL = gql`
     query MyQuery {
         news {
             foto
@@ -12,7 +12,7 @@ const TEST = gql`
 `;
 
 function News() {
-    const { loading, error, data } = useQuery(TEST);
+    const { loading, error, data } = useQuery(ARTIKEL);
   
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
