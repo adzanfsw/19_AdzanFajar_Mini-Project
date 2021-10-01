@@ -17,9 +17,9 @@ return (
             </ul>
         </header>
 
-        <nav>
-        
-        </nav>
+        <div className={styles.nav}>
+              <div className={styles.caption}>Artikel olahraga lari hari ini ..</div>
+        </div>
 
         <main>
             <img alt="Shoes Banner" src={require('../assets/images/home-banner.jpg').default} /> <br />

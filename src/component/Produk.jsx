@@ -1,5 +1,5 @@
 import { useQuery, gql } from "@apollo/client";
-import styles from './style-produk.module.css';
+import styles from '../assets/style-produk.module.css';
 
 const SEPATU = gql`
     query MyQuery {

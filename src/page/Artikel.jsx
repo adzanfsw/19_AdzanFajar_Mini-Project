@@ -1,6 +1,6 @@
 import '../assets/style-artikel.module.css'
 import styles from '../assets/style-artikel.module.css'
-import News from './fetchAPI/News';
+import News from '../component/News';
 
 function Artikel() {
     return (
@@ -18,9 +18,9 @@ function Artikel() {
               </ul>
           </header>
 
-          <div className={styles.nav}>
-              <div className={styles.caption}>Artikel olahraga lari hari ini ..</div>
-          </div>
+            <nav>
+                <div className={styles.rekomen}>Artikel olahraga hari ini ..</div>
+            </nav>
 
           <News />
 

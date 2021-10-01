@@ -53,21 +53,13 @@ header li:hover {
 	cursor: pointer;
 }
 
-.nav {
-	align-items: center;
-	text-align: center;
-	width: 100%;
-	height: 60px;
-	background-color: #F5F5F5;
-}
+.rekomen {
+	margin: 70px 0 0 70px;
 
-.caption {
 	font-family: Roboto;
-	font-style: normal;
 	font-weight: 300;
-	font-size: 14px;
-
-	padding-top: 20px;
+	font-size: 23px;
+	line-height: 23px;
 }
 
 footer {

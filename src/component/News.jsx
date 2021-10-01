@@ -1,5 +1,5 @@
 import { useQuery, gql } from "@apollo/client";
-import styles from './style-news.module.css';
+import styles from '../assets/style-news.module.css';
 
 const ARTIKEL = gql`
     query MyQuery {

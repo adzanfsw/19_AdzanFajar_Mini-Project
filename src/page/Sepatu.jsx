@@ -1,5 +1,5 @@
 import styles from '../assets/style-sepatu.module.css'
-import Produk from './fetchAPI/Produk';
+import Produk from '../component/Produk';
 
 function Sepatu() {
   return (

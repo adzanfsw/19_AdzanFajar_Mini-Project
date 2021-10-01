@@ -1,4 +1,5 @@
 import style from '../assets/style-detail.module.css'
+import Ulasan from '../component/Ulasan';
 
 function Detail() {
   return (
@@ -36,6 +37,8 @@ function Detail() {
                 </div>
             </div>
         </content>
+
+        <Ulasan />
     </>
   );
 }
