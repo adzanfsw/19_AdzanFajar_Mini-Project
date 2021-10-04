@@ -187,40 +187,4 @@ button:hover {
 		margin-left: 20px;
 	}
 
-	.geist1,
-	.geist2,
-	.geist3,
-	.geist4 {
-		left: 25px;
-	}
-
-	.geist2 {
-		top: 563px;
-	}
-
-	.geist3 {
-		top: 933px;
-	}
-
-	.geist4 {
-		top: 1303px;
-	}
-
-	.imgproduk {
-		display: flex;
-	}
-
-	.deskripsi {
-		display: flex;
-		width: 100%;
-		margin-top: 1523px;
-	}
-
-	.tipe {
-		display: block;
-	}
-
-	.produk {
-		display: block;
-	}
 }

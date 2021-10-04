@@ -6,6 +6,7 @@ import style from '../assets/style-hasilulasan.module.css';
 const TAMPIL_ULASAN = gql`
     query MyQuery {
         ulasan {
+            id
             nilai
             nama
             teks
@@ -13,43 +14,60 @@ const TAMPIL_ULASAN = gql`
     }
 `;
 
+const HAPUS_ULASAN = gql`
+    mutation MyMutation($id: Int!) {
+    delete_ulasan_by_pk(id: $id) {
+        id
+        }
+    }
+`;
+
 function HasilUlasan () {
 
     const [rating, setRating] = useState(null);
-    const [hover, setHover] = useState(null);
     const { loading, error, data } = useQuery(TAMPIL_ULASAN);
+
+    const [hapusUlasan] = useMutation(HAPUS_ULASAN,{
+        refetchQueries: [TAMPIL_ULASAN]
+    });
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
 
+    const Hapus = (idx) => {
+        hapusUlasan({variables :{
+            id:idx
+        }})
+    };
+
     return (
         data.ulasan.map(({nilai, nama, teks}) => ( 
             <div className={style.card}>
-                <div className={style.nama}>Oleh {nama}</div>
-                <div className={style.teks}>{teks}</div>
+                {[...Array(nilai)].map((star, i) => {
+                const ratingValue = i + 1;
 
+                return (
                     <label>
                         <input
                             type="radio"
                             name="rating"
-                            value={4}
-                            // onChange={onChangeRating}
-                            // onClick={() => setRating(ratingValue)}
+                            value={ratingValue}
+                            onClick={() => setRating(ratingValue)}
                         />
 
                         <FaStar
                             className={style.star}
-                            // color={ratingValue <= (hover || rating) ? "black" : "#e4e5e9"}
-                            color={"black"}
+                            color={ratingValue <= (rating) ? "black" : "black"}
                             size={"20px"}
-                            // onMouseEnter={() => setHover(ratingValue)}
-                            // onMouseLeave={() => setHover(null)}
                         />
                     </label>
-        
+                );
+            })} <span className={style.nama}>Oleh {nama}</span>
 
+
+                <div className={style.teks}>{teks}</div>
                 <button className={style.edit}>Edit</button>
-                <button className={style.hapus}>Hapus</button>
+                <button className={style.hapus} onClick={Hapus}>Hapus</button>
             </div>
         ))
     )

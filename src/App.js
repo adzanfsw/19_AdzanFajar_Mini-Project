@@ -10,7 +10,7 @@ import Ulasan from './component/Ulasan';
 function App() {
   return (
     <>
-        <Ulasan />
+        <Detail />
     </>
   );
 }

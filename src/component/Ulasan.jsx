@@ -68,6 +68,7 @@ function Ulasan() {
 
         setNama('');
         setTeks('');
+        setRating(null);
     };
 
     return ( 
