@@ -57,3 +57,44 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 640px) {
+
+    .card {
+        height: 150px;
+    }
+
+    .gambar {
+        flex-basis: 40%;
+        max-width: 100px;
+        max-height: 60px;
+        border-radius: 5px;
+    }
+
+    .artikel {
+        margin-top: 20px;
+    }
+
+    .teks {
+        margin: 0 0 0 20px;
+    }
+
+    .judul {
+        font-family: Poppins;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 15px;
+    }
+
+    .sub {
+        font-size: 10px;
+        line-height: 13px;
+    
+        margin-top: 10px;
+    }
+    
+    .url {
+        font-size: 10px;
+        margin-top: 10px;
+    }
+}
