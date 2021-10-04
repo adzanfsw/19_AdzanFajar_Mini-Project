@@ -1,21 +1,49 @@
+import React, {useState, useEffect} from 'react'
+
 import style from '../assets/style-detail.module.css'
 import Ulasan from '../component/Ulasan';
 
 function Detail() {
-  return (
+
+    const [toggleMenu, setToggleMenu] = useState(false)
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+
+    const toggleNav = () => {
+        setToggleMenu(!toggleMenu)
+    }
+
+    useEffect(() => {
+        const changeWidth = () => {
+        setScreenWidth(window.innerWidth);
+    }
+
+    window.addEventListener('resize', changeWidth)
+
+    return () => {
+        window.removeEventListener('resize', changeWidth)
+    }
+}, [])
+
+    return (
     <>
         <div className={style.up}></div>
 
-        <header>
-            <img alt="JUSTRUN!" src={require('../assets/images/justrun.png').default} />
-           
-            <ul>
-                <li>Tentang Kami</li>
-                <li>Sepatu</li>
-                <li>Artikel</li>
-                <li>Beranda</li>
-            </ul>
-        </header>
+        <div className={style.header}>
+            <img alt="JUSTRUN!" className={style.just} src={require('../assets/images/justrun.png').default} />
+
+            <div className={style.navbar}>
+                {(toggleMenu || screenWidth > 500) && (
+                    <ul id="menuList">
+                        <li>Beranda</li>
+                        <li>Artikel</li>
+                        <li>Sepatu</li>
+                        <li>Tentang Kami</li>
+                    </ul>
+                )}
+            </div>
+
+            <img onClick={toggleNav} className={style.burger} alt="JUSTRUN!" src={require('../assets/images/burger.png').default} />
+        </div>
 
         <content>
             <div className={style.imgproduk}>

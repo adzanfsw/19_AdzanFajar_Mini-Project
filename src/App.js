@@ -5,10 +5,12 @@ import TentangKami from './page/TentangKami';
 import Detail from './page/Detail'
 import Navbar from './component/Navbar';
 
+import Ulasan from './component/Ulasan';
+
 function App() {
   return (
     <>
-        <Detail />
+        <Ulasan />
     </>
   );
 }
