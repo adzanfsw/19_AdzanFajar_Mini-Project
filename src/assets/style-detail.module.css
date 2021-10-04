@@ -78,39 +78,39 @@ content {
 .geist1 {
 	position: absolute;
 	width: 350px;
-	left: 94px;
-	top: 193px;
+	float: left;
+	margin-top: 100px;
 	filter: contrast(85%);
 }
 
 .geist2 {
 	position: absolute;
 	width: 350px;
-	left: 463px;
-	top: 193px;
+	margin-left: 370px;
+	margin-top: 100px;
 	filter: contrast(85%);
 }
 
 .geist3 {
 	position: absolute;
 	width: 350px;
-	left: 94px;
-	top: 562px;
+	float: left;
+	margin-top: 469px;
 	filter: contrast(85%);
 }
 
 .geist4 {
 	position: absolute;
 	width: 350px;
-	left: 463px;
-	top: 562px;
+	margin-left: 370px;
+	margin-top: 469px;
 	filter: contrast(85%);
 }
 
 .deskripsi {
 	flex-basis: 40%;
 	margin-top: 100px;
-	padding-left: 125px;
+	padding-left: 100px;
 }
 
 .tipe {
@@ -187,4 +187,50 @@ button:hover {
 		margin-left: 20px;
 	}
 
+	content {
+		display: block;
+	}
+
+	.imgproduk {
+		display: block;
+	}
+
+	.deskripsi {
+		display: inline-block;
+		padding: 0 0 0 0px;
+		margin-top: 1600px;
+	}
+
+	.tipe {
+		margin-bottom: 0 auto;
+	}
+
+	.produk {
+		line-height: 30px;
+		margin-bottom: 0 auto;
+	}
+
+	.geist1 {
+		margin-top: 100px;
+		display: block;
+	}
+	
+	.geist2 {
+		float: left;
+		margin-top: 469px;
+		margin-left: auto;
+		display: block;
+	}
+	
+	.geist3 {
+		margin-top: 840px;
+		display: block;
+	}
+	
+	.geist4 {
+		float: left;
+		margin-top: 1210px;
+		margin-left: auto;
+		display: block;
+	}
 }
