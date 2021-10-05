@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { Link } from "react-router-dom";
 
 import style from '../assets/style-detail.module.css'
 import Ulasan from '../component/Ulasan';
@@ -29,15 +30,15 @@ function Detail() {
         <div className={style.up}></div>
 
         <div className={style.header}>
-            <img alt="JUSTRUN!" className={style.just} src={require('../assets/images/justrun.png').default} />
+            <Link to="/"><img alt="JUSTRUN!" className={style.just} src={require('../assets/images/justrun.png').default} /></Link>
 
             <div className={style.navbar}>
                 {(toggleMenu || screenWidth > 500) && (
                     <ul id="menuList">
-                        <li>Beranda</li>
-                        <li>Artikel</li>
-                        <li>Sepatu</li>
-                        <li>Tentang Kami</li>
+                        <Link to="/"><li>Beranda</li></Link>
+                        <Link to="/artikel"><li>Artikel</li></Link>
+                        <Link to="/sepatu"><li>Sepatu</li></Link>
+                        <Link to="/tentang-kami"><li>Tentang Kami</li></Link>
                     </ul>
                 )}
             </div>
@@ -57,7 +58,7 @@ function Detail() {
                 <div className={style.tipe}>Sepatu Lari Pria</div> <br />
                 <div className={style.produk}>910 - Geist Ekiden Biru Putih</div> <br />
 
-                <button>Link Pembelian</button>
+                <Link to={{ pathname: "https://910.id/reseller/products/geist-ekiden/" }} target="_blank"><button>Link Pembelian</button></Link>
 
                 <div className={style.paragraf}>
                 Sebuah produk Flagship dari 910 didalam kategori running stability / lari full maraton 42 km. menggunakan teknologi upper singel mesh transparant terbaru dari 910 yang memiliki fitting sempurna, nyaman, ringan, dan breathable.
@@ -67,6 +68,19 @@ function Detail() {
         </content>
 
         <Ulasan />
+
+        <footer>
+            <figcaption>© 2021 JUSTRUN! All Rights Reserved.</figcaption>
+
+            <div className={style.sosmed}>
+                <ul>
+                    <Link to={{ pathname: "https://youtube.com" }} target="_blank"><li><img alt="Youtube" src={require('../assets/images/tube-icon.png').default} /></li> </Link>
+                    <Link to={{ pathname: "https://twitter.com" }} target="_blank"><li><img alt="Twitter" src={require('../assets/images/twit-icon.png').default} /></li> </Link>
+                    <Link to={{ pathname: "https://facebook.com" }} target="_blank"><li><img alt="Facebook" src={require('../assets/images/fb-icon.png').default} /></li> </Link>
+                    <Link to={{ pathname: "https://instagram.com" }} target="_blank"><li><img alt="Instagram" src={require('../assets/images/insta-icon.png').default} /></li> </Link>
+                </ul>
+            </div>
+        </footer>
     </>
   );
 }

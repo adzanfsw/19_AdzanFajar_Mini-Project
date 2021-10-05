@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { Link } from "react-router-dom";
 
 import styles from '../assets/style-sepatu.module.css'
 import Produk from '../component/Produk';
@@ -29,15 +30,15 @@ function Sepatu() {
         <div className={styles.up}></div>
 
         <div className={styles.header}>
-            <img alt="JUSTRUN!" className={styles.just} src={require('../assets/images/justrun.png').default} />
+            <Link to="/"><img alt="JUSTRUN!" className={styles.just} src={require('../assets/images/justrun.png').default} /></Link>
 
             <div className={styles.navbar}>
                 {(toggleMenu || screenWidth > 500) && (
                     <ul>
-                        <li>Beranda</li>
-                        <li>Artikel</li>
-                        <li>Sepatu</li>
-                        <li>Tentang Kami</li>
+                        <Link to="/"><li>Beranda</li></Link>
+                        <Link to="/artikel"><li>Artikel</li></Link>
+                        <Link to="/sepatu"><li>Sepatu</li></Link>
+                        <Link to="/tentang-kami"><li>Tentang Kami</li></Link>
                     </ul>
                 )}
             </div>
@@ -58,10 +59,10 @@ function Sepatu() {
 
             <div className={styles.sosmed}>
                 <ul>
-                    <li><img alt="Youtube" src={require('../assets/images/tube-icon.png').default} /></li>
-                    <li><img alt="Twitter" src={require('../assets/images/twit-icon.png').default} /></li>
-                    <li><img alt="Facebook" src={require('../assets/images/fb-icon.png').default} /></li>
-                    <li><img alt="Instagram" src={require('../assets/images/insta-icon.png').default} /></li>
+                    <Link to={{ pathname: "https://youtube.com" }} target="_blank"><li><img alt="Youtube" src={require('../assets/images/tube-icon.png').default} /></li> </Link>
+                    <Link to={{ pathname: "https://twitter.com" }} target="_blank"><li><img alt="Twitter" src={require('../assets/images/twit-icon.png').default} /></li> </Link>
+                    <Link to={{ pathname: "https://facebook.com" }} target="_blank"><li><img alt="Facebook" src={require('../assets/images/fb-icon.png').default} /></li> </Link>
+                    <Link to={{ pathname: "https://instagram.com" }} target="_blank"><li><img alt="Instagram" src={require('../assets/images/insta-icon.png').default} /></li> </Link>
                 </ul>
             </div>
         </footer>

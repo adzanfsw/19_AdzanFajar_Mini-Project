@@ -1,4 +1,6 @@
 import { useQuery, gql } from "@apollo/client";
+import { Link } from "react-router-dom";
+
 import styles from '../assets/style-news.module.css';
 
 const ARTIKEL = gql`
@@ -7,6 +9,7 @@ const ARTIKEL = gql`
             foto
             judul
             subjudul
+            url
         }
     }
 `;
@@ -19,7 +22,7 @@ function News() {
   
     return (
 
-        data.news.map(({foto, judul, subjudul}) => (                           
+        data.news.map(({foto, judul, subjudul, url}) => (                           
             <div className={styles.card}>
                 <div className={styles.artikel}>
                     <img className={styles.gambar} src={foto} alt="gambar" />
@@ -27,7 +30,7 @@ function News() {
                     <div className={styles.teks}>
                         <div className={styles.judul}>{judul}</div>
                         <div className={styles.sub}>{subjudul}</div>
-                        <div className={styles.url}>Lihat selengkapnya ..</div>
+                        <div className={styles.url}><Link to={{ pathname: url}} target="_blank">Lihat selengkapnya ..</Link></div>
                     </div>
                 </div>
             </div>

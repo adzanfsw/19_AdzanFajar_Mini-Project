@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+
 import styles from '../assets/style-tentang.module.css'
 
 function TentangKami() {
   return (
     <>
         <div className={styles.navbar}>
-            <img className={styles.justrun} alt="JUSTRUN!" src={require('../assets/images/just.png').default} />
+            <Link to="/"><img alt="JUSTRUN!" className={styles.justrun} src={require('../assets/images/just.png').default} /></Link>
 
             <img className={styles.burger} alt="JUSTRUN!" src={require('../assets/images/burger.png').default} />
         </div>

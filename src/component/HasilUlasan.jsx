@@ -16,8 +16,8 @@ const TAMPIL_ULASAN = gql`
 
 const HAPUS_ULASAN = gql`
     mutation MyMutation($id: Int!) {
-    delete_ulasan_by_pk(id: $id) {
-        id
+        delete_ulasan_by_pk(id: $id) {
+            id
         }
     }
 `;
@@ -27,7 +27,7 @@ function HasilUlasan () {
     const [rating, setRating] = useState(null);
     const { loading, error, data } = useQuery(TAMPIL_ULASAN);
 
-    const [hapusUlasan] = useMutation(HAPUS_ULASAN,{
+    const [hapusUlasan, {data:hapusData}] = useMutation(HAPUS_ULASAN, {
         refetchQueries: [TAMPIL_ULASAN]
     });
 
@@ -35,13 +35,15 @@ function HasilUlasan () {
     if (error) return <p>Error :(</p>;
 
     const Hapus = (idx) => {
+        console.log("asdiasjdasj", idx)
+
         hapusUlasan({variables :{
-            id:idx
+            id:idx.target.value
         }})
     };
 
     return (
-        data.ulasan.map(({nilai, nama, teks}) => ( 
+        data.ulasan.map(({id, nilai, nama, teks}) => ( 
             <div className={style.card}>
                 {[...Array(nilai)].map((star, i) => {
                 const ratingValue = i + 1;
@@ -64,10 +66,9 @@ function HasilUlasan () {
                 );
             })} <span className={style.nama}>Oleh {nama}</span>
 
-
                 <div className={style.teks}>{teks}</div>
                 <button className={style.edit}>Edit</button>
-                <button className={style.hapus} onClick={Hapus}>Hapus</button>
+                <button className={style.hapus} value={id} onClick={Hapus}>Hapus</button>
             </div>
         ))
     )

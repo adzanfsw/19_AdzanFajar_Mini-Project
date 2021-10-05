@@ -1,4 +1,6 @@
 import { useQuery, gql } from "@apollo/client";
+import { Link } from "react-router-dom";
+
 import styles from '../assets/style-produk.module.css';
 
 const SEPATU = gql`
@@ -19,16 +21,18 @@ function Produk() {
   
     return (
 
-        data.sepatu.map(({img, tipe, produk}) => (                           
-            <div className={styles.card}>
-                <img className={styles.avatar} src={img} alt="avatar" />
+        data.sepatu.map(({img, tipe, produk}) => (
+            <Link to="/sepatu/geist-ekiden">
+                <div className={styles.card}>
+                    <img className={styles.avatar} src={img} alt="avatar" />
 
-                <div className={styles.cardContent}>
-                    <div className={styles.tipe}>{tipe}</div>
-                    <div className={styles.produk}>{produk}</div>
-                    <div className={styles.lihat}>Lihat sepatu &gt;</div>
+                    <div className={styles.cardContent}>
+                        <div className={styles.tipe}>{tipe}</div>
+                        <div className={styles.produk}>{produk}</div>
+                        <div className={styles.lihat}>Lihat sepatu &gt;</div>
+                    </div>
                 </div>
-            </div>
+            </Link>
         ))
     )
 }

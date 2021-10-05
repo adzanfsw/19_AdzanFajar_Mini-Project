@@ -35,9 +35,6 @@ function Ulasan() {
     const [tambahUlasan] = useMutation(TAMBAH_ULASAN, {
         refetchQueries: [TAMPIL_ULASAN]
     })
-  
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error :(</p>;
 
     const onChangeRating = (e) => {
         if (e.target) {
