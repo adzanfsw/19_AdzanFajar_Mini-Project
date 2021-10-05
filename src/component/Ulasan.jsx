@@ -24,6 +24,7 @@ mutation MyMutation($object: ulasan_insert_input!) {
 
 function Ulasan() {
     const [tampil, setTampil] = useState(false);
+    
     const [rating, setRating] = useState(null);
     const [hover, setHover] = useState(null);
     const [isinama, setNama] = useState('');

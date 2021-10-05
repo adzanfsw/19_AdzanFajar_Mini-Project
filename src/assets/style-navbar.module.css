@@ -1,13 +1,32 @@
-.justrun {
-	height: 35px;
-	float: left;
-	margin-left: 94px;
-	margin-top: 30px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;900&display=swap');
+
+* {
+	text-decoration: none;
+	list-style-type: none;
 }
 
-.burger {
-	height: 20px;
-	float: right;
-	margin-right: 100px;
-	margin-top: 40px;
+.nav {
+	text-align: center;
+	margin: 0 auto;
+	max-width: 30%;
+	border: 1px solid white;
+}
+
+.nav ul {
+	color: white;
+	font-family: Roboto;
+	font-weight: bold;
+	font-size: 25px;
+	line-height: 55px;
+
+	margin-top: 150px;
+}
+
+ul:hover {
+	opacity: 50%;
+}
+
+.beranda:hover {
+	opacity: 100%;
 }

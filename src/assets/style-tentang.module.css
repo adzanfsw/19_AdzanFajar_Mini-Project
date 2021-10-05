@@ -14,11 +14,14 @@
 .navbar {
     width: auto;
     height: 700px;
+
     background: url(images/walk.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+    margin-bottom: 150px;
 }
 
 .justrun {
@@ -36,7 +39,8 @@
 }
 
 .article {
-    margin-top: 70px;
+    margin: 0 auto;
+    max-width: 800px;
 }
 
 h1 {
@@ -45,26 +49,25 @@ h1 {
     font-weight: 900;
     font-size: 36px;
     line-height: 36px;
-    margin-left: 375px;
+    /* margin-left: 375px; */
 }
 
 small {
     color: rgb(206, 0, 0);
 }
 
-.article p {
+.p {
     font-family: Roboto;
     font-style: normal;
     font-weight: 300;
     font-size: 18px;
-    line-height: 23px;
+    line-height: 30px;
     text-align: left;
 }
 
 strong {
     font-family: Roboto;
-    margin-left: 830px;
-    text-align: right;
+    float: right;
 }
 
 strong:hover {
@@ -75,9 +78,7 @@ strong:hover {
 
 .footer {
 	padding: 5px;
-    height: fit-content;
-	color: #727272;
-    background-color: white;
-    border-top: 1px #727272 solid;
+    height: 100px;
+	background-color: #eeeeee;
     margin-top: 150px;
 }

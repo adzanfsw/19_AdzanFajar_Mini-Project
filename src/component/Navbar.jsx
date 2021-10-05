@@ -5,9 +5,12 @@ function Navbar() {
 
     return (
         <div className={style.nav}>
-            <img className={style.justrun} alt="JUSTRUN!" src={require('../assets/images/just.png').default} />
-
-            <img className={style.burger} alt="JUSTRUN!" src={require('../assets/images/burger.png').default} />
+            <ul>
+                <li className={style.beranda}>BERANDA</li>
+                <li>ARTIKEL</li>
+                <li>SEPATU</li>
+                <li>TENTANG</li>
+            </ul>
         </div>
     )
 }
