@@ -7,6 +7,7 @@ import HasilUlasan from './HasilUlasan';
 const TAMPIL_ULASAN = gql`
     query MyQuery {
         ulasan {
+            id
             nilai
             nama
             teks
@@ -70,6 +71,8 @@ function Ulasan() {
         setRating(null);
     };
 
+    console.log(data)
+
     return ( 
 
         <div className={style.box}>
@@ -129,8 +132,17 @@ function Ulasan() {
                 <button className={style.kirim} onClick={KirimUlasan}>Kirim</button>
             </label>:null
             } <br />
-                 
-            <HasilUlasan />
+            
+            {
+                data?.ulasan.map((v) => (
+                    <HasilUlasan
+                        id={v.id}
+                        nilai={v.nilai}
+                        nama={v.nama}
+                        teks={v.teks}
+                    />
+                ))
+            }
         </div>
     )
 }

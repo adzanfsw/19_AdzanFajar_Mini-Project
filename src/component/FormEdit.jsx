@@ -3,7 +3,7 @@ import { useQuery, useMutation, gql } from "@apollo/client";
 
 import style from '../assets/style-edit.module.css';
 
-function FormEdit ({ teksbaru, onEdit, isiteks }) {
+function FormEdit ({ teksbaru, EditTeks, teks, Edit, bukaEdit, hilangTeks }) {
 
     return (
         <>
@@ -11,13 +11,13 @@ function FormEdit ({ teksbaru, onEdit, isiteks }) {
                 <textarea
                         name="bio"
                         rows="4"
-                        value={teksbaru}
-
-                        onChange={onEdit}
+                        value={teks}
+                        // placeholder={teks}
+                        onChange={EditTeks}
 
                         required
                     />  <br />
-                    <button className={style.kirim}>Kirim</button>
+                    <button onClick={() => {bukaEdit(); hilangTeks(); Edit();}} className={style.kirim}>Kirim</button>
             </label>
         </>
     )
