@@ -25,6 +25,9 @@ const HAPUS_ULASAN = gql`
 
 function HasilUlasan () {
     const [edit, setEdit] = useState(false);
+    const [hilang, setHilang] = useState(true);
+
+    const [teksbaru, setTeksBaru] = useState('');
 
     const [rating, setRating] = useState(null);
     const { loading, error, data } = useQuery(TAMPIL_ULASAN);
@@ -35,6 +38,20 @@ function HasilUlasan () {
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
+
+    const bukaEdit = () => {
+        return setEdit(!edit)
+    }
+
+    const hilangTeks = () => {
+        setHilang(!hilang)
+    }
+
+    const EditTeks = (e) => {
+        if (e.target) {
+            setTeksBaru(e.target.value);
+        }
+    };
 
     const Hapus = (idx) => {
         console.log("asdiasjdasj", idx)
@@ -68,14 +85,15 @@ function HasilUlasan () {
                 );
             })} <span className={style.nama}>Oleh {nama}</span>
 
-            
-                <div className={style.teks}>{teks}</div>
-                <button className={style.edit} onClick={() => setEdit(true)}>Edit</button>
-                <button className={style.hapus} value={id} onClick={Hapus}>Hapus</button>
+                {hilang ?
+                <div>
+                    <div className={style.teks}>{teks}</div>
+                    <button className={style.edit} onClick={() => {bukaEdit(); hilangTeks();}}>Edit</button>
+                    <button className={style.hapus} value={id} onClick={Hapus}>Hapus</button>
+                </div>: ""}
 
-                {
-                    edit?<FormEdit />:null
-                }
+                {edit ? <FormEdit teksbaru={teksbaru} isiteks={teks} onEdit={EditTeks}/>:""}
+                
             </div>
         ))
     )

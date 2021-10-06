@@ -63,7 +63,7 @@ function Ulasan() {
             nama: isinama,
             teks: isiteks,
           }
-        }})
+    }})
 
         setNama('');
         setTeks('');
