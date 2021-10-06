@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { useQuery, useMutation, gql } from "@apollo/client";
 import style from '../assets/style-hasilulasan.module.css';
+import FormEdit from './FormEdit';
 
 const TAMPIL_ULASAN = gql`
     query MyQuery {
@@ -23,6 +24,7 @@ const HAPUS_ULASAN = gql`
 `;
 
 function HasilUlasan () {
+    const [edit, setEdit] = useState(false);
 
     const [rating, setRating] = useState(null);
     const { loading, error, data } = useQuery(TAMPIL_ULASAN);
@@ -66,9 +68,14 @@ function HasilUlasan () {
                 );
             })} <span className={style.nama}>Oleh {nama}</span>
 
+            
                 <div className={style.teks}>{teks}</div>
-                <button className={style.edit}>Edit</button>
+                <button className={style.edit} onClick={() => setEdit(true)}>Edit</button>
                 <button className={style.hapus} value={id} onClick={Hapus}>Hapus</button>
+
+                {
+                    edit?<FormEdit />:null
+                }
             </div>
         ))
     )

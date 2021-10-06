@@ -27,6 +27,7 @@ function Ulasan() {
     
     const [rating, setRating] = useState(null);
     const [hover, setHover] = useState(null);
+    
     const [isinama, setNama] = useState('');
     const [isiteks, setTeks] = useState('');
 
