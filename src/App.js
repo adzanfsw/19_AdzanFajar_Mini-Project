@@ -6,10 +6,6 @@ import Sepatu from './page/Sepatu'
 import TentangKami from './page/TentangKami';
 import Detail from './page/Detail'
 
-import Navbar from './component/Navbar';
-
-import Ulasan from './component/Ulasan';
-
 function App() {
   return (
     <>
@@ -20,6 +16,8 @@ function App() {
                 <Route path="/sepatu" exact component={Sepatu} />
                 <Route path="/tentang-kami" exact component={TentangKami} />
                 <Route path="/sepatu/geist-ekiden" exact component={Detail} />
+
+                <Route path="/navbar" exact component={Navbar} />
 
                 {/* <Route path="*" component={} /> */}
             </Switch>

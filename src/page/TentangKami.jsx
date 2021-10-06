@@ -1,15 +1,46 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import styles from '../assets/style-tentang.module.css'
 
 function TentangKami() {
-  return (
+
+    const [modal, setModal] = useState(false);
+
+    const toggleModal = () => {
+        setModal(!modal);
+    };
+
+    if(modal) {
+        document.body.classList.add('active-modal')
+    } else {
+        document.body.classList.remove('active-modal')
+    }
+
+    return (
     <>
         <div className={styles.navbar}>
             <Link to="/"><img alt="JUSTRUN!" className={styles.justrun} src={require('../assets/images/just.png').default} /></Link>
 
-            <img className={styles.burger} alt="JUSTRUN!" src={require('../assets/images/burger.png').default} />
+            <img className={styles.burger} alt="JUSTRUN!" onClick={toggleModal} src={require('../assets/images/burger.png').default} />
         </div>
+
+        {modal && (
+            <div className={styles.modal}>
+                <div onClick={toggleModal} className={styles.overlay}></div>
+                <div className={styles.content}>
+                    <ul>
+                        <Link to="/"><li>BERANDA</li></Link>
+                        <Link to="/artikel"><li>ARTIKEL</li></Link>
+                        <Link to="/sepatu"><li>SEPATU</li></Link>
+                        <Link to="/tentang-kami"><li>TENTANG KAMI</li></Link>
+
+                        <div className={styles.small}>© 2021 JUSTRUN! All Rights Reserved.</div> <br />
+                        <div onClick={toggleModal} className={styles.close}>X</div>
+                    </ul>                
+                </div>
+            </div>
+        )}
 
         <div className={styles.article}>
             <h1>TENTANG JUSTRUN<small>!</small></h1>
