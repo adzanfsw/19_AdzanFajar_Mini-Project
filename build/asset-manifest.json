@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.43133d4b.chunk.css",
+    "main.js": "/static/js/main.a1f8d20a.chunk.js",
+    "main.js.map": "/static/js/main.a1f8d20a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.4b5d6558.js",
+    "runtime-main.js.map": "/static/js/runtime-main.4b5d6558.js.map",
+    "static/js/2.ff266cbf.chunk.js": "/static/js/2.ff266cbf.chunk.js",
+    "static/js/2.ff266cbf.chunk.js.map": "/static/js/2.ff266cbf.chunk.js.map",
+    "static/js/3.380abaea.chunk.js": "/static/js/3.380abaea.chunk.js",
+    "static/js/3.380abaea.chunk.js.map": "/static/js/3.380abaea.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.43133d4b.chunk.css.map": "/static/css/main.43133d4b.chunk.css.map",
+    "static/js/2.ff266cbf.chunk.js.LICENSE.txt": "/static/js/2.ff266cbf.chunk.js.LICENSE.txt",
+    "static/media/geist.jpg": "/static/media/geist.e38a8963.jpg",
+    "static/media/geist1.jpg": "/static/media/geist1.d41ce0c4.jpg",
+    "static/media/geist2.jpg": "/static/media/geist2.dc267975.jpg",
+    "static/media/geist3.jpg": "/static/media/geist3.c7a4e6a1.jpg",
+    "static/media/geist4.jpg": "/static/media/geist4.093c1d05.jpg",
+    "static/media/home-banner.jpg": "/static/media/home-banner.d3ea691e.jpg",
+    "static/media/olahraga.jpg": "/static/media/olahraga.7d63b34c.jpg",
+    "static/media/style-tentang.module.css": "/static/media/walk.6cc5fe28.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4b5d6558.js",
+    "static/js/2.ff266cbf.chunk.js",
+    "static/css/main.43133d4b.chunk.css",
+    "static/js/main.a1f8d20a.chunk.js"
+  ]
+}

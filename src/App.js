@@ -15,7 +15,7 @@ function App() {
                 <Route path="/artikel" exact component={Artikel} />
                 <Route path="/sepatu" exact component={Sepatu} />
                 <Route path="/tentang-kami" exact component={TentangKami} />
-                <Route path="/sepatu/geist-ekiden" exact component={Detail} />
+                <Route path="/sepatu/geist-ekiden" exact component={Detail} />.
 
                 {/* <Route path="*" component={} /> */}
             </Switch>
