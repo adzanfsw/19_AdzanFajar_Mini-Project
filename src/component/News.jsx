@@ -30,7 +30,7 @@ function News() {
                     <div className={styles.teks}>
                         <div className={styles.judul}>{judul}</div>
                         <div className={styles.sub}>{subjudul}</div>
-                        <div className={styles.url}><Link to={{ pathname: url}} target="_blank">Lihat selengkapnya ..</Link></div>
+                        <Link to={{ pathname: url}} target="_blank"><div className={styles.url}>Lihat Selengkapnya ..</div></Link>
                     </div>
                 </div>
             </div>

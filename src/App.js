@@ -17,8 +17,6 @@ function App() {
                 <Route path="/tentang-kami" exact component={TentangKami} />
                 <Route path="/sepatu/geist-ekiden" exact component={Detail} />
 
-                <Route path="/navbar" exact component={Navbar} />
-
                 {/* <Route path="*" component={} /> */}
             </Switch>
         </BrowserRouter>

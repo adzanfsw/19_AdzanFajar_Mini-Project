@@ -281,4 +281,35 @@ footer {
 		margin-left: auto;
 		display: block;
 	}
+
+	button {
+		font-size: 12px;
+		padding: 7px 13px 7px 13px;
+		margin: 10px 0 0 0;
+	}
+
+	.sosmed img {
+		height: 20px;
+		opacity: 50%;
+	}
+
+	.sosmed ul {
+		margin-right: 10px;
+	}
+
+	.sosmed li {
+		padding: 0 0 0 10px;
+	}
+
+	.figcaption {
+		font-size: 10px;
+		padding: 0 0 0 10px;
+	}
+
+	footer {
+		display: flex;
+		align-items: center;
+		margin-top: 100px;
+		height: 60px;
+	}
 }
