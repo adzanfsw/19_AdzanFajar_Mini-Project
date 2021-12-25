@@ -1,150 +1,144 @@
-import { useState } from 'react';
-import { FaStar } from 'react-icons/fa';
+import { useState } from "react";
+import { FaStar } from "react-icons/fa";
 import { useQuery, useMutation, gql } from "@apollo/client";
-import style from '../assets/style-ulasan.module.css';
-import HasilUlasan from './HasilUlasan';
+import style from "../assets/style-ulasan.module.css";
+import HasilUlasan from "./HasilUlasan";
 
 const TAMPIL_ULASAN = gql`
-    query MyQuery {
-        ulasan {
-            id
-            nilai
-            nama
-            teks
-        }
+  query MyQuery {
+    ulasan {
+      id
+      nilai
+      nama
+      teks
     }
+  }
 `;
 
 const TAMBAH_ULASAN = gql`
-mutation MyMutation($object: ulasan_insert_input!) {
-  insert_ulasan_one(object: $object) {
-    id
+  mutation MyMutation($object: ulasan_insert_input!) {
+    insert_ulasan_one(object: $object) {
+      id
+    }
   }
-}
 `;
 
 function Ulasan() {
-    const [tampil, setTampil] = useState(false);
-    
-    const [rating, setRating] = useState(null);
-    const [hover, setHover] = useState(null);
-    
-    const [isinama, setNama] = useState('');
-    const [isiteks, setTeks] = useState('');
+  const [tampil, setTampil] = useState(false);
 
-    const { loading, error, data } = useQuery(TAMPIL_ULASAN);
+  const [rating, setRating] = useState(null);
+  const [hover, setHover] = useState(null);
 
-    const [tambahUlasan] = useMutation(TAMBAH_ULASAN, {
-        refetchQueries: [TAMPIL_ULASAN]
-    })
+  const [isinama, setNama] = useState("");
+  const [isiteks, setTeks] = useState("");
 
-    const onChangeRating = (e) => {
-        if (e.target) {
-            setRating(e.target.value);
-        }
-    };
+  const { data } = useQuery(TAMPIL_ULASAN);
 
-    const onChangeNama = (e) => {
-        if (e.target) {
-            setNama(e.target.value);
-        }
-    };
-    
-    const onChangeTeks = (e) => {
-        if (e.target) {
-            setTeks(e.target.value);
-        }
-    };
+  const [tambahUlasan] = useMutation(TAMBAH_ULASAN, {
+    refetchQueries: [TAMPIL_ULASAN],
+  });
 
-    const KirimUlasan = (e) => {
-        e.preventDefault();
-        tambahUlasan({variables :{
-          object : {
-            nilai: rating,
-            nama: isinama,
-            teks: isiteks,
-          }
-    }})
+  const onChangeRating = (e) => {
+    if (e.target) {
+      setRating(e.target.value);
+    }
+  };
 
-        setNama('');
-        setTeks('');
-        setRating(null);
-    };
+  const onChangeNama = (e) => {
+    if (e.target) {
+      setNama(e.target.value);
+    }
+  };
 
-    console.log(data)
+  const onChangeTeks = (e) => {
+    if (e.target) {
+      setTeks(e.target.value);
+    }
+  };
 
-    return ( 
+  const KirimUlasan = (e) => {
+    e.preventDefault();
+    tambahUlasan({
+      variables: {
+        object: {
+          nilai: rating,
+          nama: isinama,
+          teks: isiteks,
+        },
+      },
+    });
 
-        <div className={style.box}>
-            <div className={style.title}>
-                Bagaimana pengalaman teman-teman terhadap sepatu ini?
-                <small className={style.ulas} onClick={() => setTampil(true)}> Berikan ulasanmu sekarang!</small>
-            </div>
+    setNama("");
+    setTeks("");
+    setRating(null);
+  };
 
-            {
-            tampil?<label>
+  console.log(data);
+
+  return (
+    <div className={style.box}>
+      <div className={style.title}>
+        Bagaimana pengalaman teman-teman terhadap sepatu ini?
+        <small className={style.ulas} onClick={() => setTampil(true)}>
+          {" "}
+          Berikan ulasanmu sekarang!
+        </small>
+      </div>
+      {tampil ? (
+        <label>
+          <input
+            type="text"
+            name="fname"
+            placeholder="Masukkan Nama mu .."
+            onChange={onChangeNama}
+            value={isinama}
+            required
+          />{" "}
+          <br />
+          {[...Array(5)].map((star, i) => {
+            const ratingValue = i + 1;
+
+            return (
+              <label>
                 <input
-                    type="text"
-                    name="fname"
-                    placeholder="Masukkan Nama mu .."
+                  type="radio"
+                  name="rating"
+                  value={ratingValue}
+                  onChange={onChangeRating}
+                  onClick={() => setRating(ratingValue)}
+                />
 
-                    onChange={onChangeNama}
-                    value={isinama}
-
-                    required
-                /> <br />
-
-            {[...Array(5)].map((star, i) => {
-                const ratingValue = i + 1;
-
-                return (
-                    <label>
-                        <input
-                            type="radio"
-                            name="rating"
-                            value={ratingValue}
-                            onChange={onChangeRating}
-                            onClick={() => setRating(ratingValue)}
-                        />
-
-                        <FaStar
-                            className={style.star}
-                            color={ratingValue <= (hover || rating) ? "black" : "#e4e5e9"}
-                            size={"20px"}
-                            onMouseEnter={() => setHover(ratingValue)}
-                            onMouseLeave={() => setHover(null)}
-                        />
-                    </label>
-                );
-            })} <span>Berikan bintang untuk sepatu ini!</span>
-
-                <textarea
-                    name="bio"
-                    rows="6"
-                    placeholder="Ceritakan pengalamanmu .."
-
-                    onChange={onChangeTeks}
-                    value={isiteks}
-
-                    required
-                /> <br />
-
-                <button className={style.kirim} onClick={KirimUlasan}>Kirim</button>
-            </label>:null
-            } <br />
-            
-            {
-                data?.ulasan.map((v) => (
-                    <HasilUlasan
-                        id={v.id}
-                        nilai={v.nilai}
-                        nama={v.nama}
-                        teks={v.teks}
-                    />
-                ))
-            }
-        </div>
-    )
+                <FaStar
+                  className={style.star}
+                  color={ratingValue <= (hover || rating) ? "black" : "#e4e5e9"}
+                  size={"20px"}
+                  onMouseEnter={() => setHover(ratingValue)}
+                  onMouseLeave={() => setHover(null)}
+                />
+              </label>
+            );
+          })}{" "}
+          <span>Berikan bintang untuk sepatu ini!</span>
+          <textarea
+            name="bio"
+            rows="6"
+            placeholder="Ceritakan pengalamanmu .."
+            onChange={onChangeTeks}
+            value={isiteks}
+            required
+          />{" "}
+          <br />
+          <button className={style.kirim} onClick={KirimUlasan}>
+            Kirim
+          </button>
+        </label>
+      ) : null}{" "}
+      <br />
+      {data?.ulasan.map((v) => (
+        <HasilUlasan id={v.id} nilai={v.nilai} nama={v.nama} teks={v.teks} />
+      ))}
+    </div>
+  );
 }
 
 export default Ulasan;
